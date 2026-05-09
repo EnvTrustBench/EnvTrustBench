@@ -15,9 +15,11 @@ auth.json
 *.stderr.txt
 worker-status.jsonl
 
+# Local preview
+.preview-server*.log
+
 # Submitted manuscript artifacts should be added only after approval.
 *.pdf
 main-preview-*.png
 evaluation-preview-*.png
 appendix-preview-*.png
-
