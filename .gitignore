@@ -1,0 +1,23 @@
+# Local and sensitive material
+local-runs/
+remote-results/
+run-archives/
+result-packages/
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+*.zip
+*.key
+*.env
+providers.local.json
+auth.json
+*.stdout.txt
+*.stderr.txt
+worker-status.jsonl
+
+# Submitted manuscript artifacts should be added only after approval.
+*.pdf
+main-preview-*.png
+evaluation-preview-*.png
+appendix-preview-*.png
+

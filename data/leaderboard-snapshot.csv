@@ -1,0 +1,15 @@
+Rank,Agent Scaffold,Model,Runs,FPCR
+1,Claude Code,Claude Sonnet 4.6,275,55.3%
+2,Codex,Qwen3.6-Plus,275,68.7%
+3,Claude Code,GLM-5.1,275,75.6%
+4,Gemini CLI,Qwen3.6-Plus,275,76.4%
+5,Gemini CLI,Gemini 3.1 Pro,275,84.0%
+6,OpenClaw,GLM-5.1,275,85.1%
+7,OpenCode,Qwen3.6-Plus,275,86.2%
+8,OpenCode,GLM-5.1,275,86.2%
+9,Codex,GPT-5.5,275,88.4%
+10,Claude Code,Qwen3.6-Plus,275,88.7%
+11,OpenClaw,Qwen3.6-Plus,275,90.2%
+12,Claude Code,DeepSeek-V4-Pro,275,90.9%
+13,OpenCode,DeepSeek-V4-Pro,275,93.5%
+14,OpenClaw,DeepSeek-V4-Pro,275,96.7%
