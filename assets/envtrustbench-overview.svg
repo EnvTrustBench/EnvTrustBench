@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="260" viewBox="0 0 920 260" role="img" aria-labelledby="title desc">
+  <title id="title">EnvTrustBench overview</title>
+  <desc id="desc">A scenario is expanded into a workspace, evidence, an agent trace, and an oracle verdict.</desc>
+  <rect width="920" height="260" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3568d4"/>
+    </marker>
+  </defs>
+  <text x="460" y="36" text-anchor="middle" font-family="Noto Sans, Arial, sans-serif" font-size="22" font-weight="700" fill="#1f2933">Scenario-to-Oracle Benchmark Generation</text>
+  <g font-family="Noto Sans, Arial, sans-serif">
+    <rect x="38" y="78" width="170" height="96" rx="12" fill="#f3f6fa" stroke="#c9d3e1"/>
+    <text x="123" y="116" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2933">Task Scenario</text>
+    <text x="123" y="143" text-anchor="middle" font-size="13" fill="#5f6c7b">objective + true state</text>
+
+    <line x1="218" y1="126" x2="292" y2="126" stroke="#3568d4" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="304" y="78" width="170" height="96" rx="12" fill="#f3f6fa" stroke="#c9d3e1"/>
+    <text x="389" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2933">Workspace</text>
+    <text x="389" y="132" text-anchor="middle" font-size="13" fill="#5f6c7b">files, APIs, logs, tools</text>
+    <text x="389" y="154" text-anchor="middle" font-size="13" fill="#5f6c7b">with misleading evidence</text>
+
+    <line x1="484" y1="126" x2="558" y2="126" stroke="#3568d4" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="570" y="78" width="170" height="96" rx="12" fill="#f3f6fa" stroke="#c9d3e1"/>
+    <text x="655" y="116" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2933">Agent Trace</text>
+    <text x="655" y="143" text-anchor="middle" font-size="13" fill="#5f6c7b">actions + observations</text>
+
+    <line x1="750" y1="126" x2="824" y2="126" stroke="#3568d4" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="736" y="184" width="146" height="48" rx="24" fill="#1f4ba5"/>
+    <text x="809" y="214" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">pass / false path</text>
+
+    <rect x="836" y="78" width="46" height="96" rx="12" fill="#eaf1ff" stroke="#9fb8f2"/>
+    <text transform="translate(864 161) rotate(-90)" text-anchor="middle" font-size="14" font-weight="700" fill="#1f4ba5">Oracle</text>
+  </g>
+</svg>

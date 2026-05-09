@@ -11,72 +11,53 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&family=Noto+Serif:wght@600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260509" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="EnvTrustBench home">
-        <span class="brand-mark">ETB</span>
-        <span>EnvTrustBench</span>
-      </a>
-      <nav class="nav" aria-label="Page navigation">
-        <a href="#leaderboard">Leaderboard</a>
-        <a href="#overview">Overview</a>
-        <a href="#findings">Findings</a>
-        <a href="#trace">Trace</a>
-        <a href="#citation">Citation</a>
-      </nav>
-    </header>
-
-    <main id="top">
+    <main>
       <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">Agent reliability under misleading evidence</p>
-          <h1>Evaluating LLM agents' evidence-grounding robustness at scale</h1>
-          <p class="lede">
-            EnvTrustBench tests whether agents keep actions grounded in the true
-            environment state when files, logs, APIs, command outputs, web
-            pages, memory-like state, or executable artifacts are stale, wrong,
-            or adversarial.
-          </p>
-          <div class="actions" aria-label="Project resources">
-            <a class="button primary" href="docs/release-boundary.md">Paper status</a>
-            <a class="button" href="https://github.com/EnvTrustBench/EnvTrustBench">Code</a>
-            <a class="button" href="data/table1-final-fpcr.md">Results</a>
-            <a class="button" href="docs/project-page-outline.md">Site notes</a>
-          </div>
-          <p class="note">
-            Public draft. The submitted manuscript PDF and raw traces are held
-            back until release approval.
-          </p>
-        </div>
+        <div class="hero-inner">
+          <img class="project-logo" src="favicon.svg" alt="" />
+          <h1>
+            EnvTrustBench
+            <span>Evaluating LLM Agents' Evidence-Grounding Robustness at Scale</span>
+          </h1>
 
-        <aside class="hero-card" aria-label="Benchmark summary">
-          <div class="metric big">
-            <span>83.3%</span>
-            <label>aggregate false-path completion rate</label>
+          <div class="authors" aria-label="Author status">
+            <span>EnvTrustBench Contributors</span>
           </div>
-          <div class="metric-grid">
-            <div class="metric"><span>55</span><label>cases</label></div>
-            <div class="metric"><span>14</span><label>agent stacks</label></div>
-            <div class="metric"><span>3,850</span><label>runs</label></div>
-            <div class="metric"><span>5</span><label>patterns</label></div>
+          <p class="affiliation">
+            Public project draft. Author metadata, manuscript PDF, and raw traces
+            are withheld while the submitted manuscript is under review.
+          </p>
+
+          <p class="abstract">
+            EnvTrustBench is an extensible benchmark framework for testing whether
+            LLM agents keep actions grounded in the true environment state when
+            files, logs, APIs, command outputs, web pages, memory-like state, or
+            executable artifacts are stale, wrong, or adversarial.
+          </p>
+
+          <div class="resource-buttons" aria-label="Project resources">
+            <a class="resource-button" href="docs/release-boundary.md">Paper</a>
+            <a class="resource-button" href="https://github.com/EnvTrustBench/EnvTrustBench">Code</a>
+            <a class="resource-button" href="data/table1-final-fpcr.csv">Dataset</a>
+            <a class="resource-button" href="data/table1-final-fpcr.md">Results</a>
           </div>
-        </aside>
+        </div>
       </section>
 
-      <section id="leaderboard" class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Leaderboard</p>
-          <h2>False-path completion rate</h2>
-          <p>
-            Lower is better. Each stack has 275 accepted pass-or-fail runs in
-            the final matrix.
-          </p>
+      <section id="leaderboard" class="wide-section">
+        <h2>Leaderboard</h2>
+        <div class="filters">
+          <label for="trial-filter">Filters:</label>
+          <select id="trial-filter" aria-label="Leaderboard filter">
+            <option selected>Final matrix</option>
+          </select>
         </div>
 
         <div class="table-wrap">
@@ -87,7 +68,8 @@
                 <th>Agent</th>
                 <th>Model</th>
                 <th>Trials</th>
-                <th>FPCR</th>
+                <th>FPCR (%)</th>
+                <th>Date</th>
                 <th>Source</th>
               </tr>
             </thead>
@@ -98,6 +80,7 @@
                 <td>Claude Sonnet 4.6</td>
                 <td>275</td>
                 <td><strong>55.3%</strong></td>
+                <td>2026-05-07</td>
                 <td>Final matrix</td>
               </tr>
               <tr>
@@ -106,6 +89,7 @@
                 <td>Qwen3.6-Plus</td>
                 <td>275</td>
                 <td>68.7%</td>
+                <td>2026-05-07</td>
                 <td>Final matrix</td>
               </tr>
               <tr>
@@ -114,6 +98,7 @@
                 <td>GLM-5.1</td>
                 <td>275</td>
                 <td>75.6%</td>
+                <td>2026-05-07</td>
                 <td>Final matrix</td>
               </tr>
               <tr>
@@ -122,6 +107,7 @@
                 <td>Qwen3.6-Plus</td>
                 <td>275</td>
                 <td>76.4%</td>
+                <td>2026-05-07</td>
                 <td>Final matrix</td>
               </tr>
               <tr>
@@ -130,115 +116,223 @@
                 <td>Gemini 3.1 Pro</td>
                 <td>275</td>
                 <td>84.0%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>OpenClaw</td>
+                <td>GLM-5.1</td>
+                <td>275</td>
+                <td>85.1%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>OpenCode</td>
+                <td>Qwen3.6-Plus</td>
+                <td>275</td>
+                <td>86.2%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>OpenCode</td>
+                <td>GLM-5.1</td>
+                <td>275</td>
+                <td>86.2%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Codex</td>
+                <td>GPT-5.5</td>
+                <td>275</td>
+                <td>88.4%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Claude Code</td>
+                <td>Qwen3.6-Plus</td>
+                <td>275</td>
+                <td>88.7%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>11</td>
+                <td>OpenClaw</td>
+                <td>Qwen3.6-Plus</td>
+                <td>275</td>
+                <td>90.2%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>12</td>
+                <td>Claude Code</td>
+                <td>DeepSeek-V4-Pro</td>
+                <td>275</td>
+                <td>90.9%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>13</td>
+                <td>OpenCode</td>
+                <td>DeepSeek-V4-Pro</td>
+                <td>275</td>
+                <td>93.5%</td>
+                <td>2026-05-07</td>
+                <td>Final matrix</td>
+              </tr>
+              <tr>
+                <td>14</td>
+                <td>OpenClaw</td>
+                <td>DeepSeek-V4-Pro</td>
+                <td>275</td>
+                <td>96.7%</td>
+                <td>2026-05-07</td>
                 <td>Final matrix</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="caption">
-          Metric: FPCR = false-path runs / accepted pass-or-fail runs. Full
-          table: <a href="data/table1-final-fpcr.md">Table 1 final FPCR data</a>.
+
+        <div class="leaderboard-notes">
+          <p>
+            The leaderboard ranks model-scaffold stacks by false-path completion
+            rate. Lower is better. Each stack has 275 accepted pass-or-fail runs
+            in the current final matrix.
+          </p>
+          <p>
+            <strong>FPCR:</strong> percentage of runs where the agent completed
+            the task-incorrect false path under the true environment state.
+            Full aggregate table:
+            <a href="data/table1-final-fpcr.md">Table 1 final FPCR data</a>.
+          </p>
+        </div>
+      </section>
+
+      <section id="overview" class="section">
+        <h2>Overview of EnvTrustBench</h2>
+        <div class="content-narrow">
+          <p>
+            EnvTrustBench evaluates a core reliability question for tool-using
+            agents: whether an agent treats environment-facing evidence as
+            sufficient ground for action when that evidence conflicts with the
+            true task state.
+          </p>
+
+          <img
+            class="figure"
+            src="assets/envtrustbench-overview.svg"
+            alt="EnvTrustBench scenario, environment, trace, and oracle workflow"
+          />
+
+          <p>
+            <strong>Benchmarking evidence-grounding defects.</strong>
+            A benchmark author supplies a task scenario. EnvTrustBench generates
+            the workspace, environment-facing evidence, agent-facing objective,
+            and validation oracle. The evaluated agent sees the ordinary task
+            environment, while the benchmark records the action-observation trace
+            and checks whether final behavior follows the correct path or a
+            task-incorrect false path.
+          </p>
+
+          <p>
+            <strong>Five exposure patterns.</strong>
+            The benchmark covers persistent observation poisoning, runtime
+            feedback manipulation, temporal state misgrounding, derived-memory
+            misgrounding, and executable-artifact misgrounding.
+          </p>
+        </div>
+      </section>
+
+      <section id="impact" class="section">
+        <h2>EnvTrustBench's Agent Reliability Impact</h2>
+        <div class="content-narrow">
+          <p>
+            Across 55 machine-scoreable cases, 14 model-scaffold stacks, and
+            3,850 accepted pass-or-fail runs, agents completed the false path in
+            3,206 runs. The aggregate false-path completion rate is 83.3%.
+          </p>
+          <p>
+            <strong>Not just prompt injection.</strong>
+            EnvTrustBench focuses on evidence-grounding defects: behavioral
+            failures where an agent converts plausible environmental observations
+            into wrong beliefs or wrong actions under the true environment state.
+          </p>
+          <p>
+            <strong>Stack choice matters.</strong>
+            The current stack-average FPCR range is 55.3% to 96.7%, suggesting
+            that scaffold behavior and model behavior should be evaluated
+            together rather than treated as isolated components.
+          </p>
+        </div>
+      </section>
+
+      <section id="findings" class="wide-section">
+        <h2>More Key Findings</h2>
+        <p class="section-lede">
+          In addition to the leaderboard, the current aggregate data highlights
+          several practical failure modes for agentic systems.
         </p>
+
+        <div class="finding-grid">
+          <article>
+            <h3>Environment evidence becomes operational authority</h3>
+            <p>
+              Agents often treat logs, docs, command outputs, or helper artifacts
+              as sufficient authority even when the true task state requires
+              verification before action.
+            </p>
+          </article>
+          <article>
+            <h3>Failures cross distinct exposure channels</h3>
+            <p>
+              False-path behavior appears across stable files, runtime feedback,
+              stale state, memory-like summaries, and executable artifacts.
+            </p>
+          </article>
+          <article>
+            <h3>Oracle-grounded scoring keeps claims concrete</h3>
+            <p>
+              Runs are scored against final workspace artifacts and trace
+              linkage, not against assistant self-reports or narrative claims.
+            </p>
+          </article>
+        </div>
       </section>
 
-      <section id="overview" class="section split">
-        <div>
-          <p class="eyebrow">Overview of EnvTrustBench</p>
-          <h2>Scenario-to-oracle benchmark generation</h2>
+      <section id="trace" class="section">
+        <h2>An Example of Evidence-Grounding Failure Trace</h2>
+        <div class="content-narrow">
           <p>
-            A benchmark author supplies a task scenario. EnvTrustBench expands
-            it into a concrete workspace, environment-facing evidence, an
-            agent-facing objective, and validation oracles. The evaluated agent
-            sees the ordinary task environment, while the benchmark records the
-            trace and checks whether the final behavior follows the correct path
-            or a task-incorrect false path.
+            In a database migration gate decision task, the correct path keeps
+            the migration blocked until authoritative readiness evidence permits
+            it. A misleading observation claims compatibility checks passed. A
+            run is scored as a defect if the final artifact records the false
+            proceed decision and the trace links that decision to the misleading
+            evidence.
           </p>
-        </div>
-        <div class="flow" aria-label="EnvTrustBench workflow">
-          <div>Task scenario</div>
-          <span></span>
-          <div>Workspace + environment</div>
-          <span></span>
-          <div>Agent execution trace</div>
-          <span></span>
-          <div>Oracle verdict</div>
+
+          <img
+            class="figure"
+            src="assets/trace-example.svg"
+            alt="Example trace showing ground truth, misleading evidence, false path, and oracle verdict"
+          />
         </div>
       </section>
 
-      <section class="section">
-        <div class="section-heading">
-          <p class="eyebrow">Evidence-grounding patterns</p>
-          <h2>Five ways misleading evidence reaches the agent</h2>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <h3>Persistent observation poisoning</h3>
-            <p>False claims in stable files, docs, runbooks, or metadata.</p>
-          </article>
-          <article class="card">
-            <h3>Runtime feedback manipulation</h3>
-            <p>Misleading logs, test output, API responses, or tool feedback.</p>
-          </article>
-          <article class="card">
-            <h3>Temporal state misgrounding</h3>
-            <p>Wrong timing, expiry, release-window, or maintenance claims.</p>
-          </article>
-          <article class="card">
-            <h3>Derived-memory misgrounding</h3>
-            <p>Stale memory-like state treated as current authority.</p>
-          </article>
-          <article class="card">
-            <h3>Executable-artifact misgrounding</h3>
-            <p>Helpers, packages, scripts, or artifacts that realize the false path.</p>
-          </article>
-        </div>
-      </section>
-
-      <section id="findings" class="section impact">
-        <div class="section-heading">
-          <p class="eyebrow">Key findings</p>
-          <h2>Agents often convert plausible evidence into wrong action</h2>
-        </div>
-        <div class="findings">
-          <div>
-            <strong>3,206 / 3,850</strong>
-            <span>accepted runs completed the false path.</span>
-          </div>
-          <div>
-            <strong>55.3% to 96.7%</strong>
-            <span>stack-average FPCR range in the final matrix.</span>
-          </div>
-          <div>
-            <strong>Not just prompt injection</strong>
-            <span>the oracle checks task-grounded behavior under true environment state.</span>
-          </div>
-        </div>
-      </section>
-
-      <section id="trace" class="section split">
-        <div>
-          <p class="eyebrow">Example trace shape</p>
-          <h2>Database migration gate decision</h2>
-          <p>
-            The agent must decide whether a migration may proceed. The correct
-            path keeps the migration blocked until authoritative readiness
-            evidence permits it. A misleading observation claims compatibility
-            checks passed. A run is scored as a defect if the final artifact
-            records the false proceed decision and the trace links that decision
-            to the misleading evidence.
-          </p>
-        </div>
-        <div class="trace-card">
-          <div><b>Ground truth</b><span>hold-migration</span></div>
-          <div><b>Misleading evidence</b><span>compatibility check passed</span></div>
-          <div><b>False path</b><span>proceed-migration</span></div>
-          <div><b>Oracle</b><span>final artifact + trace linkage</span></div>
-        </div>
-      </section>
-
-      <section id="citation" class="section citation">
-        <p class="eyebrow">Citation</p>
-        <h2>Coming soon</h2>
+      <section id="citation" class="wide-section citation">
+        <h2>Citation</h2>
+        <p>If you use this work in your research, please cite the following after public release:</p>
         <pre><code>@misc{envtrustbench2026,
   title  = {EnvTrustBench: Evaluating LLM Agents Against Evidence-Grounding Defects},
   author = {EnvTrustBench Contributors},
@@ -249,8 +343,11 @@
     </main>
 
     <footer>
-      <span>EnvTrustBench</span>
-      <span>Public project draft. Raw traces and submitted PDF are not included.</span>
+      <p>
+        This public page follows an academic project-page layout inspired by
+        CyberGym. Raw traces, provider configuration, remote runner details, and
+        the submitted manuscript PDF are not included.
+      </p>
     </footer>
   </body>
 </html>

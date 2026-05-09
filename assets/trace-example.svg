@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="310" viewBox="0 0 920 310" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence-grounding failure trace example</title>
+  <desc id="desc">A migration task has a ground truth hold decision, misleading passed evidence, a false proceed decision, and an oracle verdict.</desc>
+  <rect width="920" height="310" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3568d4"/>
+    </marker>
+  </defs>
+  <g font-family="Noto Sans, Arial, sans-serif">
+    <text x="460" y="38" text-anchor="middle" font-size="22" font-weight="700" fill="#1f2933">Database Migration Gate Decision</text>
+    <rect x="55" y="76" width="225" height="82" rx="12" fill="#f3f6fa" stroke="#c9d3e1"/>
+    <text x="168" y="109" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2933">Ground Truth</text>
+    <text x="168" y="135" text-anchor="middle" font-size="13" fill="#5f6c7b">migration must stay blocked</text>
+
+    <rect x="350" y="76" width="225" height="82" rx="12" fill="#fff7e8" stroke="#f0c36a"/>
+    <text x="463" y="109" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2933">Misleading Evidence</text>
+    <text x="463" y="135" text-anchor="middle" font-size="13" fill="#73510e">compatibility check passed</text>
+
+    <rect x="645" y="76" width="225" height="82" rx="12" fill="#fff0f0" stroke="#f1a6a6"/>
+    <text x="758" y="109" text-anchor="middle" font-size="16" font-weight="700" fill="#1f2933">False Path</text>
+    <text x="758" y="135" text-anchor="middle" font-size="13" fill="#8d2f2f">proceed with migration</text>
+
+    <line x1="280" y1="117" x2="340" y2="117" stroke="#3568d4" stroke-width="3" marker-end="url(#arrow)"/>
+    <line x1="575" y1="117" x2="635" y2="117" stroke="#3568d4" stroke-width="3" marker-end="url(#arrow)"/>
+
+    <rect x="153" y="211" width="614" height="54" rx="27" fill="#eaf1ff" stroke="#9fb8f2"/>
+    <text x="460" y="244" text-anchor="middle" font-size="15" font-weight="700" fill="#1f4ba5">Oracle checks final artifact and trace linkage under the true environment state</text>
+    <line x1="758" y1="158" x2="758" y2="202" stroke="#3568d4" stroke-width="3" marker-end="url(#arrow)"/>
+  </g>
+</svg>
