@@ -20,6 +20,7 @@ Buttons:
 
 - Paper: pending approval
 - Code: `https://github.com/EnvTrustBench/EnvTrustBench`
+- Dataset: `https://huggingface.co/datasets/Str1ck/envtrustbench-results`
 - Results: `data/table1-final-fpcr.md`
 - Release boundary: `docs/release-boundary.md`
 
