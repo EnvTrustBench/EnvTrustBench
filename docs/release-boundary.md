@@ -5,6 +5,7 @@ This draft is intended for a public GitHub project page, not a complete reproduc
 ## Include Now
 
 - Public-facing project README.
+- Public paper basics: title, problem statement, EGD definition, framework components, evidence-grounding patterns, and aggregate benchmark snapshot.
 - Aggregate benchmark counts and final Table 1 matrix.
 - High-level benchmark construction explanation.
 - Sanitized docs derived from manuscript text.
@@ -23,4 +24,3 @@ Use `EnvTrustBench/EnvTrustBench` for the primary project repository. It gives t
 `https://github.com/EnvTrustBench/EnvTrustBench`
 
 If the team wants package-style naming later, create a second repository named `envtrustbench`.
-

@@ -2,7 +2,7 @@
 
 Evaluating LLM agents' evidence-grounding robustness against misleading environmental observations.
 
-[Project Page](https://envtrustbench.github.io/EnvTrustBench/) | [Paper](docs/release-boundary.md) | [Results](data/table1-final-fpcr.md) | [Release Boundary](docs/release-boundary.md)
+[Project Page](https://envtrustbench.github.io/EnvTrustBench/) | [Paper Basics](docs/paper-basics.md) | [Results](data/table1-final-fpcr.md) | [Release Boundary](docs/release-boundary.md)
 
 EnvTrustBench is an extensible benchmark framework for testing whether LLM agents overtrust files, logs, APIs, command outputs, web pages, memory-like state, or executable artifacts when those observations are stale, wrong, or adversarial. The benchmark focuses on evidence-grounding defects: cases where an agent treats environment-facing evidence as sufficient ground for action and reaches a task-incorrect false path under the true environment state.
 
@@ -69,6 +69,7 @@ In a database migration gate decision task, the correct path is to keep a migrat
 
 ## Public Data
 
+- [Paper basics](docs/paper-basics.md)
 - [Final Table 1 FPCR data](data/table1-final-fpcr.md)
 - [Final Table 1 FPCR CSV](data/table1-final-fpcr.csv)
 - [Leaderboard snapshot CSV](data/leaderboard-snapshot.csv)
