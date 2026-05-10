@@ -2,7 +2,7 @@ import os
 import sys
 from pathlib import Path
 
-from huggingface_hub import HfApi
+from huggingface_hub import HfApi, get_token
 
 
 DEFAULT_REPO_ID = "EnvTrustBench/envtrustbench-results"
@@ -12,10 +12,14 @@ DATASET_DIR = ROOT / "hf-dataset"
 
 def main() -> int:
     repo_id = os.environ.get("HF_DATASET_REPO_ID", DEFAULT_REPO_ID)
-    token = os.environ.get("HF_TOKEN") or os.environ.get("HUGGINGFACE_HUB_TOKEN")
+    token = (
+        os.environ.get("HF_TOKEN")
+        or os.environ.get("HUGGINGFACE_HUB_TOKEN")
+        or get_token()
+    )
     if not token:
-        print("Missing HF_TOKEN or HUGGINGFACE_HUB_TOKEN.", file=sys.stderr)
-        print("Create a Hugging Face token with write access, then rerun.", file=sys.stderr)
+        print("Missing Hugging Face token.", file=sys.stderr)
+        print("Run `hf auth login` or set HF_TOKEN, then rerun.", file=sys.stderr)
         return 2
 
     api = HfApi(token=token)
